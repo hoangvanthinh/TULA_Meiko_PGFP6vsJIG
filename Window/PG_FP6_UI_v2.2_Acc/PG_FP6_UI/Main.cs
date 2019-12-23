@@ -94,21 +94,26 @@ namespace PG_FP6_UI
             #endregion
 
             #region Creat Excel File
-
-            //string filepath = System.IO.Path.Combine(@"", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
-            string filepath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
-
-            //string filepath = System.IO.Path.Combine(@"C:\Users\HP\Desktop\Temp", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
-            if (System.IO.File.Exists(filepath))
+            try
             {
-                // MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy-hh-mm") + ".xls" +": Da ton tai");
+                //string filepath = System.IO.Path.Combine(@"", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+                string filepath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+
+                //string filepath = System.IO.Path.Combine(@"C:\Users\HP\Desktop\Temp", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+                if (System.IO.File.Exists(filepath))
+                {
+                    // MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy-hh-mm") + ".xls" +": Da ton tai");
+                }
+                else
+                {
+                    Logfile.createExcelfile(filepath);
+                }
+                Logfile.openExcel(filepath);
             }
-            else
+            catch
             {
-                Logfile.createExcelfile(filepath);
+                MessageBox.Show("Warring: Don't Creat Excel file!!");
             }
-            Logfile.openExcel(filepath);
-            
             #endregion
            // MessageBox.Show("Please setup Port!");
             Setup.ShowDialog();

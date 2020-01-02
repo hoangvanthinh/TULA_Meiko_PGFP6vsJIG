@@ -94,6 +94,7 @@ namespace PG_FP6_UI
             #endregion
 
             #region Creat Excel File
+
             try
             {
                 //string filepath = System.IO.Path.Combine(@"", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
@@ -102,20 +103,31 @@ namespace PG_FP6_UI
                 //string filepath = System.IO.Path.Combine(@"C:\Users\HP\Desktop\Temp", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
                 if (System.IO.File.Exists(filepath))
                 {
-                    // MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy-hh-mm") + ".xls" +": Da ton tai");
+                    //string filepath = System.IO.Path.Combine(@"", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+                    //string filepath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+
+                    //string filepath = System.IO.Path.Combine(@"C:\Users\HP\Desktop\Temp", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+                    if (System.IO.File.Exists(filepath))
+                    {
+                        // MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy-hh-mm") + ".xls" +": Da ton tai");
+                    }
+                    else
+                    {
+                        Logfile.createExcelfile(filepath);
+                    }
+                    Logfile.openExcel(filepath);
                 }
-                else
-                {
-                    Logfile.createExcelfile(filepath);
-                }
-                Logfile.openExcel(filepath);
             }
             catch
             {
                 MessageBox.Show("Warring: Don't Creat Excel file!!");
             }
             #endregion
-           // MessageBox.Show("Please setup Port!");
+            // MessageBox.Show("Please setup Port!");
+            #region .txt Logfile
+            //string filepathTXT = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt");
+           // WriteLogFile.WriteLogtxt("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt", String.Format("{0} @ {1}", "Log is Created at", DateTime.Now));
+            #endregion
             Setup.ShowDialog();
         }
         private void Init()
@@ -482,9 +494,9 @@ namespace PG_FP6_UI
             if(Status_PGFP6.Text == "PASS" || Status_PGFP6.Text =="ERROR")
             {
                 Logfile.addDataToExcel(Logfile.Rownumber.ToString(),QR_code.Text, Status_PGFP6.Text, DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss"), " ");
-                //this.QR_code.TextChanged -= new System.EventHandler(this.QR_code_TextChanged);
-                //QR_code.Clear();
-                //CodeModel.Clear();
+                WriteLogFile.WriteLogtxt("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt",
+                                        String.Format("{0}  {1}  {2}", QR_code.Text, Status_PGFP6.Text, DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss")));
+ 
                 this.QR_code.TextChanged += new System.EventHandler(this.QR_code_TextChanged);
                 QR_code.Focus();
             }
@@ -661,10 +673,7 @@ namespace PG_FP6_UI
 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
 
-        }
 
         private void autoRunToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -731,7 +740,10 @@ namespace PG_FP6_UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Logfile.addDataToExcel(Logfile.Rownumber.ToString(), "1286414-aaaaaaa", textBox1.Text, DateTime.Now.ToString("MM-dd-yyyy"), "___");
+            WriteLogFile.WriteLogtxt("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt",
+                               String.Format("{0}  {1}  {2}", "1286414 - aaaaaaa", "OK", DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss")));
+ 
+            Logfile.addDataToExcel(Logfile.Rownumber.ToString(), "1286414-aaaaaaa", "OK", DateTime.Now.ToString("MM-dd-yyyy"), "___");
         }
 
         private void ClearQR_Click(object sender, EventArgs e)
@@ -814,5 +826,26 @@ namespace PG_FP6_UI
 
         }
              
+    }
+    class WriteLogFile
+    {
+        public static bool WriteLogtxt(string strFileName, string strMessage)
+        {
+            try
+            {
+                string filepath = string.Format("{0}\\{1}", @"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, strFileName);
+                FileStream objFilestream = new FileStream(filepath, FileMode.Append, FileAccess.Write);
+                StreamWriter objStreamWriter = new StreamWriter((Stream)objFilestream);
+      
+                objStreamWriter.WriteLine(strMessage);
+                objStreamWriter.Close();
+                objFilestream.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="pathLogfile" Type="System.String" Scope="User">
-      <Value Profile="(Default)">F:\Project\Tula\Meiko\PG_FP6\Code\Window\PG_FP6_UI_v2.2_Acc\PG_FP6_UI\bin\Debug</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="password" Type="System.String" Scope="User">
       <Value Profile="(Default)">meikotula</Value>

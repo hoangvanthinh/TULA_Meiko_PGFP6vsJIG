@@ -591,6 +591,7 @@
             this.button2.TabIndex = 53;
             this.button2.Text = "add data";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
@@ -754,7 +755,7 @@
             this.Name = "Main";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TULA-PG-FP6-v2.02.111219";
+            this.Text = "TULA-PG-FP6-v2.04.02012020";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Main_KeyUp);

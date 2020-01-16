@@ -25,7 +25,7 @@ namespace PG_FP6_UI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\HP\\Desktop\\Temp")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string pathLogfile {
             get {
                 return ((string)(this["pathLogfile"]));

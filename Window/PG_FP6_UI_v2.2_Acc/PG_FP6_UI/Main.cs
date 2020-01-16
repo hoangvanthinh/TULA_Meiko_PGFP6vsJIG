@@ -105,7 +105,7 @@ namespace PG_FP6_UI
                 {
                     if (System.IO.File.Exists(filepath))
                     {
-                         MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy-hh-mm") + ".xls" +": Da ton tai");
+                         MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls" +": Da ton tai");
                     }
                     else
                     {

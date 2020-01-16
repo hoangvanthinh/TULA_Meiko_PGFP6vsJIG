@@ -123,3 +123,4 @@ F:\Project\Tula\Meiko\PG_FP6\Code\Window\PG_FP6_UI_v2.2_Acc\PG_FP6_UI\obj\Debug\
 F:\Project\Tula\Meiko\PG_FP6\Code\Window\PG_FP6_UI_v2.2_Acc\PG_FP6_UI\obj\Debug\PG_FP6_UI.Setup.resources
 F:\Project\Tula\Meiko\PG_FP6\Code\Window\PG_FP6_UI_v2.2_Acc\PG_FP6_UI\obj\Debug\PG_FP6_UI.User.resources
 F:\Project\Tula\Meiko\PG_FP6\Code\Window\PG_FP6_UI_v2.2_Acc\PG_FP6_UI\obj\Debug\PG_FP6_UI.csproj.GenerateResource.Cache
+F:\Project\Tula\Meiko\PG_FP6\Code\Window\PG_FP6_UI_v2.2_Acc\PG_FP6_UI\obj\Debug\PG_FP6_UI.password.resources

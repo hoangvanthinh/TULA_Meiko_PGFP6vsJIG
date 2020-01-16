@@ -39,6 +39,7 @@
             this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password.Location = new System.Drawing.Point(87, 59);
             this.Password.Name = "Password";
+            this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(214, 26);
             this.Password.TabIndex = 0;
             this.Password.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Password_KeyUp);

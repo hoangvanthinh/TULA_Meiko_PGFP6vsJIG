@@ -99,17 +99,13 @@ namespace PG_FP6_UI
             {
                 //string filepath = System.IO.Path.Combine(@"", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
                 string filepath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
-
+                MessageBox.Show(filepath.ToString());
                 //string filepath = System.IO.Path.Combine(@"C:\Users\HP\Desktop\Temp", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
                 if (System.IO.File.Exists(filepath))
                 {
-                    //string filepath = System.IO.Path.Combine(@"", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
-                    //string filepath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
-
-                    //string filepath = System.IO.Path.Combine(@"C:\Users\HP\Desktop\Temp", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
                     if (System.IO.File.Exists(filepath))
                     {
-                        // MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy-hh-mm") + ".xls" +": Da ton tai");
+                         MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy-hh-mm") + ".xls" +": Da ton tai");
                     }
                     else
                     {
@@ -124,10 +120,7 @@ namespace PG_FP6_UI
             }
             #endregion
             // MessageBox.Show("Please setup Port!");
-            #region .txt Logfile
-            //string filepathTXT = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt");
-           // WriteLogFile.WriteLogtxt("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt", String.Format("{0} @ {1}", "Log is Created at", DateTime.Now));
-            #endregion
+
             Setup.ShowDialog();
         }
         private void Init()
@@ -494,8 +487,8 @@ namespace PG_FP6_UI
             if(Status_PGFP6.Text == "PASS" || Status_PGFP6.Text =="ERROR")
             {
                 Logfile.addDataToExcel(Logfile.Rownumber.ToString(),QR_code.Text, Status_PGFP6.Text, DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss"), " ");
-                WriteLogFile.WriteLogtxt("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt",
-                                        String.Format("{0}  {1}  {2}", QR_code.Text, Status_PGFP6.Text, DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss")));
+                //WriteLogFile.WriteLogtxt("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt",
+                //                        String.Format("{0}  {1}  {2}", QR_code.Text, Status_PGFP6.Text, DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss")));
  
                 this.QR_code.TextChanged += new System.EventHandler(this.QR_code_TextChanged);
                 QR_code.Focus();

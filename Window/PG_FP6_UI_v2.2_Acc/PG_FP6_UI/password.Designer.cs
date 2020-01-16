@@ -52,6 +52,7 @@
             // 
             this.t_oldpass.Location = new System.Drawing.Point(167, 44);
             this.t_oldpass.Name = "t_oldpass";
+            this.t_oldpass.PasswordChar = '*';
             this.t_oldpass.Size = new System.Drawing.Size(142, 20);
             this.t_oldpass.TabIndex = 1;
             this.t_oldpass.TextChanged += new System.EventHandler(this.t_oldpass_TextChanged);
@@ -78,6 +79,7 @@
             // 
             this.t_newpass.Location = new System.Drawing.Point(167, 94);
             this.t_newpass.Name = "t_newpass";
+            this.t_newpass.PasswordChar = '*';
             this.t_newpass.Size = new System.Drawing.Size(142, 20);
             this.t_newpass.TabIndex = 4;
             // 
@@ -85,6 +87,7 @@
             // 
             this.t_verifypass.Location = new System.Drawing.Point(167, 144);
             this.t_verifypass.Name = "t_verifypass";
+            this.t_verifypass.PasswordChar = '*';
             this.t_verifypass.Size = new System.Drawing.Size(142, 20);
             this.t_verifypass.TabIndex = 5;
             this.t_verifypass.TextChanged += new System.EventHandler(this.t_verifypass_TextChanged);

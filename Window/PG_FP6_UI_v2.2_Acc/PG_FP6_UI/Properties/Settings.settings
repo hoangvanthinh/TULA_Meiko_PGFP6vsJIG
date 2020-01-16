@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="pathLogfile" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">C:\Users\HP\Desktop\Temp</Value>
     </Setting>
     <Setting Name="password" Type="System.String" Scope="User">
       <Value Profile="(Default)">meikotula</Value>

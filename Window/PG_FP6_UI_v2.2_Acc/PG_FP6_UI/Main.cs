@@ -97,22 +97,19 @@ namespace PG_FP6_UI
 
             try
             {
-                //string filepath = System.IO.Path.Combine(@"", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+                //string filepath =@"C:\Users\HP\Desktop\Logfile\t1.xls";
                 string filepath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
-                MessageBox.Show(filepath.ToString());
-                //string filepath = System.IO.Path.Combine(@"C:\Users\HP\Desktop\Temp", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+                //MessageBox.Show(filepath.ToString());
                 if (System.IO.File.Exists(filepath))
                 {
-                    if (System.IO.File.Exists(filepath))
-                    {
-                         MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls" +": Da ton tai");
-                    }
-                    else
-                    {
-                        Logfile.createExcelfile(filepath);
-                    }
-                    Logfile.openExcel(filepath);
+                        MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls" +": Da ton tai");
                 }
+                else
+                {                   
+                    Logfile.createExcelfile(filepath);     
+                }
+                Logfile.openExcel(filepath);
+               
             }
             catch
             {

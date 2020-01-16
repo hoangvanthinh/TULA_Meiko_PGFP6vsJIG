@@ -40,7 +40,7 @@ namespace PG_FP6_UI
             myExcelWorkSheet = (Excel.Worksheet)myExcelWorkbook.Worksheets[1];
             return this.myExcelWorkSheet.UsedRange.Rows.Count;
         }
-        string[,] skyscrapers = new string[1,5]
+        string[,] skyscrapers = new string[1, 5]
         {
              { "TT", "Code", "Status", "Date", "Note" }
             
@@ -53,13 +53,13 @@ namespace PG_FP6_UI
             myExcelApplication = new Excel.Application();
             myExcelWorkbook = myExcelApplication.Workbooks.Add();
 
-           //myExcelWorkSheet = (Excel.Worksheet)myExcelWorkbook.Worksheets.get_Item(1);
+            //myExcelWorkSheet = (Excel.Worksheet)myExcelWorkbook.Worksheets.get_Item(1);
 
             myExcelWorkSheet = (Excel.Worksheet)myExcelWorkbook.Worksheets[1]; // define in which worksheet, do you want to add data
             myExcelWorkSheet.Name = "File1"; // define a name for the worksheet (optinal)
 
             for (int i = 0; i < 5; i++)
-                myExcelWorkSheet.Cells[1,i+1] = skyscrapers[0, i];
+                myExcelWorkSheet.Cells[1, i + 1] = skyscrapers[0, i];
 
             myExcelWorkSheet.Cells[1, 1].Interior.Color = Color.YellowGreen;
             myExcelWorkSheet.Cells[1, 2].Interior.Color = Color.YellowGreen;
@@ -73,12 +73,12 @@ namespace PG_FP6_UI
             myExcelWorkSheet.Range[myExcelWorkSheet.Cells[1, 3], myExcelWorkSheet.Cells[2, 3]].Merge();
             myExcelWorkSheet.Range[myExcelWorkSheet.Cells[1, 4], myExcelWorkSheet.Cells[2, 4]].Merge();
             myExcelWorkSheet.Range[myExcelWorkSheet.Cells[1, 5], myExcelWorkSheet.Cells[2, 5]].Merge();
-       
+
 
             myExcelWorkSheet.Cells.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             myExcelWorkSheet.Cells.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
 
-            
+
 
             myExcelWorkbook.SaveAs(excelFilePath);
             myExcelWorkbook.Close();
@@ -107,8 +107,8 @@ namespace PG_FP6_UI
             //myExcelWorkSheet.Name = "WorkSheet 1"; // define a name for the worksheet (optinal)
 
             int numberOfSheets = myExcelWorkbook.Worksheets.Count; // get number of worksheets (optional)
-            
-            myExcelApplication.Visible = true;
+
+            myExcelApplication.Visible = false;
             //rowNumber = myExcelWorkSheet.Columns.Count + 3;
 
         }
@@ -118,7 +118,7 @@ namespace PG_FP6_UI
             myExcelWorkSheet = (Excel.Worksheet)myExcelWorkbook.Worksheets[1]; // define in which worksheet, do you want to add data
             rowNumber = myExcelWorkSheet.UsedRange.Rows.Count + 1;
 
-            myExcelWorkSheet.Cells[rowNumber, 1] = (rowNumber-2).ToString();
+            myExcelWorkSheet.Cells[rowNumber, 1] = (rowNumber - 2).ToString();
             myExcelWorkSheet.Cells[rowNumber, 2] = code;
             myExcelWorkSheet.Cells[rowNumber, 3] = status;
             myExcelWorkSheet.Cells[rowNumber, 4] = date;
@@ -127,7 +127,7 @@ namespace PG_FP6_UI
 
             if (status == "ERROR")
             {
-               // myExcelWorkSheet.Cells[rowNumber, 3].Interior.Color = Color.Red;
+                // myExcelWorkSheet.Cells[rowNumber, 3].Interior.Color = Color.Red;
                 myExcelWorkSheet.Cells[rowNumber, 3].Font.Color = Color.Red;
 
             }
@@ -148,7 +148,7 @@ namespace PG_FP6_UI
 
 
                 myExcelWorkbook.Close(true, excelFilePath, System.Reflection.Missing.Value); // close the worksheet
-               // myExcelWorkbook.Close();
+                // myExcelWorkbook.Close();
                 myExcelApplication.Quit();
 
             }
@@ -159,8 +159,8 @@ namespace PG_FP6_UI
                     myExcelApplication.Quit(); // close the excel application
                 }
             }
-   
-      
+
+
         }
 
     }

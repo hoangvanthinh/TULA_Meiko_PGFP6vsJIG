@@ -108,7 +108,7 @@ namespace PG_FP6_UI
 
             int numberOfSheets = myExcelWorkbook.Worksheets.Count; // get number of worksheets (optional)
             
-            myExcelApplication.Visible = false;
+            myExcelApplication.Visible = true;
             //rowNumber = myExcelWorkSheet.Columns.Count + 3;
 
         }

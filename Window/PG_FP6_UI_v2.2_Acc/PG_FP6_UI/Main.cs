@@ -733,8 +733,8 @@ namespace PG_FP6_UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            WriteLogFile.WriteLogtxt("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt",
-                               String.Format("{0}  {1}  {2}", "1286414 - aaaaaaa", "OK", DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss")));
+            //WriteLogFile.WriteLogtxt("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt",
+            //                   String.Format("{0}  {1}  {2}", "1286414 - aaaaaaa", "OK", DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss")));
  
             Logfile.addDataToExcel(Logfile.Rownumber.ToString(), "1286414-aaaaaaa", "OK", DateTime.Now.ToString("MM-dd-yyyy"), "___");
         }
@@ -820,25 +820,25 @@ namespace PG_FP6_UI
         }
              
     }
-    class WriteLogFile
-    {
-        public static bool WriteLogtxt(string strFileName, string strMessage)
-        {
-            try
-            {
-                string filepath = string.Format("{0}\\{1}", @"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, strFileName);
-                FileStream objFilestream = new FileStream(filepath, FileMode.Append, FileAccess.Write);
-                StreamWriter objStreamWriter = new StreamWriter((Stream)objFilestream);
+    //class WriteLogFile
+    //{
+    //    public static bool WriteLogtxt(string strFileName, string strMessage)
+    //    {
+    //        try
+    //        {
+    //            string filepath = string.Format("{0}\\{1}", @"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, strFileName);
+    //            FileStream objFilestream = new FileStream(filepath, FileMode.Append, FileAccess.Write);
+    //            StreamWriter objStreamWriter = new StreamWriter((Stream)objFilestream);
       
-                objStreamWriter.WriteLine(strMessage);
-                objStreamWriter.Close();
-                objFilestream.Close();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-    }
+    //            objStreamWriter.WriteLine(strMessage);
+    //            objStreamWriter.Close();
+    //            objFilestream.Close();
+    //            return true;
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            return false;
+    //        }
+    //    }
+    //}
 }

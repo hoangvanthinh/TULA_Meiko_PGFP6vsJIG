@@ -25,7 +25,7 @@ namespace PG_FP6_UI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("F:\\Project\\Tula\\Meiko\\PG_FP6\\Code\\Window\\PG_FP6_UI_v2.2_Acc\\PG_FP6_UI\\bin\\Debug")]
         public string pathLogfile {
             get {
                 return ((string)(this["pathLogfile"]));

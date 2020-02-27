@@ -26,10 +26,14 @@ namespace PG_FP6_UI
             string[] portnames = SerialPort.GetPortNames();
             try
             {
+                M_com.Items.Clear();
+                P_com.Items.Clear();
+                MKCom.Items.Clear();
                 foreach (var p in portnames)
                 {
                     M_com.Items.Add(p);
                     P_com.Items.Add(p);
+                    MKCom.Items.Add(p);
                 }
                 M_com.SelectedItem = "COM44";
                 M_Baud.SelectedItem = "19200";
@@ -42,6 +46,12 @@ namespace PG_FP6_UI
                 P_Databit.SelectedItem = "8";
                 P_Parity.SelectedItem = "None";
                 P_Stopbit.SelectedItem = "1";
+
+                MKCom.SelectedItem = "COM10";
+                MKBaud.SelectedItem = "9600";
+                MKData.SelectedItem = "8";
+                MKParity.SelectedItem = "None";
+                MKStopbit.SelectedItem = "1";
             }
             catch
             {
@@ -54,6 +64,8 @@ namespace PG_FP6_UI
            // PG_FP6_RS232.flag = int.Parse(textBox1.Text);
         
         }
+
+
 
   
 

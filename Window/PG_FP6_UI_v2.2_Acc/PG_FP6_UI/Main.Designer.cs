@@ -44,7 +44,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autoRunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.t1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Command_send = new System.Windows.Forms.TextBox();
             this.Clear_command = new System.Windows.Forms.Button();
@@ -69,29 +68,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.S_system = new System.Windows.Forms.Button();
-            this.Mbus = new System.Windows.Forms.Label();
-            this.Pbus = new System.Windows.Forms.Label();
-            this.CodeModel = new System.Windows.Forms.TextBox();
-            this.Exit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ClearQR = new System.Windows.Forms.Button();
             this.CodeModel_setup = new System.Windows.Forms.Label();
             this.jig_open = new System.Windows.Forms.Button();
             this.jig_close = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Logout = new System.Windows.Forms.Button();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClearQR = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // QR_code
@@ -191,14 +184,12 @@
             // 
             // send
             // 
-            this.send.Enabled = false;
-            this.send.Location = new System.Drawing.Point(964, 705);
+            this.send.Location = new System.Drawing.Point(964, 647);
             this.send.Name = "send";
             this.send.Size = new System.Drawing.Size(75, 23);
             this.send.TabIndex = 14;
             this.send.Text = "send";
             this.send.UseVisualStyleBackColor = true;
-            this.send.Visible = false;
             this.send.Click += new System.EventHandler(this.send_Click);
             // 
             // timer1
@@ -222,8 +213,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.setupToolStripMenuItem,
-            this.autoRunToolStripMenuItem,
-            this.t1ToolStripMenuItem});
+            this.t1ToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1350, 24);
@@ -245,27 +236,19 @@
             this.setupToolStripMenuItem.Text = "Port";
             this.setupToolStripMenuItem.Click += new System.EventHandler(this.setupToolStripMenuItem_Click);
             // 
-            // autoRunToolStripMenuItem
-            // 
-            this.autoRunToolStripMenuItem.Name = "autoRunToolStripMenuItem";
-            this.autoRunToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.autoRunToolStripMenuItem.Text = "Auto Run";
-            this.autoRunToolStripMenuItem.Click += new System.EventHandler(this.autoRunToolStripMenuItem_Click);
-            // 
             // t1ToolStripMenuItem
             // 
             this.t1ToolStripMenuItem.Name = "t1ToolStripMenuItem";
-            this.t1ToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.t1ToolStripMenuItem.Text = "User";
+            this.t1ToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.t1ToolStripMenuItem.Text = "Login";
             this.t1ToolStripMenuItem.Click += new System.EventHandler(this.t1ToolStripMenuItem_Click);
             // 
             // Command_send
             // 
-            this.Command_send.Location = new System.Drawing.Point(1058, 705);
+            this.Command_send.Location = new System.Drawing.Point(1058, 648);
             this.Command_send.Name = "Command_send";
             this.Command_send.Size = new System.Drawing.Size(279, 20);
             this.Command_send.TabIndex = 18;
-            this.Command_send.Visible = false;
             // 
             // Clear_command
             // 
@@ -519,130 +502,15 @@
             // S_system
             // 
             this.S_system.BackColor = System.Drawing.Color.Black;
-            this.S_system.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.S_system.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.S_system.ForeColor = System.Drawing.Color.Red;
             this.S_system.Location = new System.Drawing.Point(964, 37);
             this.S_system.Name = "S_system";
             this.S_system.Size = new System.Drawing.Size(89, 53);
             this.S_system.TabIndex = 46;
-            this.S_system.Text = "Connect";
+            this.S_system.Text = "Disconnect";
             this.S_system.UseVisualStyleBackColor = false;
             this.S_system.Click += new System.EventHandler(this.S_system_Click);
-            // 
-            // Mbus
-            // 
-            this.Mbus.AutoSize = true;
-            this.Mbus.ForeColor = System.Drawing.Color.Gold;
-            this.Mbus.Location = new System.Drawing.Point(963, 637);
-            this.Mbus.Name = "Mbus";
-            this.Mbus.Size = new System.Drawing.Size(16, 13);
-            this.Mbus.TabIndex = 47;
-            this.Mbus.Text = "M";
-            // 
-            // Pbus
-            // 
-            this.Pbus.AutoSize = true;
-            this.Pbus.ForeColor = System.Drawing.Color.Gold;
-            this.Pbus.Location = new System.Drawing.Point(963, 655);
-            this.Pbus.Name = "Pbus";
-            this.Pbus.Size = new System.Drawing.Size(14, 13);
-            this.Pbus.TabIndex = 48;
-            this.Pbus.Text = "P";
-            // 
-            // CodeModel
-            // 
-            this.CodeModel.BackColor = System.Drawing.Color.Black;
-            this.CodeModel.Enabled = false;
-            this.CodeModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CodeModel.ForeColor = System.Drawing.Color.Gold;
-            this.CodeModel.Location = new System.Drawing.Point(671, 262);
-            this.CodeModel.Name = "CodeModel";
-            this.CodeModel.Size = new System.Drawing.Size(141, 49);
-            this.CodeModel.TabIndex = 50;
-            this.CodeModel.Visible = false;
-            // 
-            // Exit
-            // 
-            this.Exit.Location = new System.Drawing.Point(891, 38);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(66, 23);
-            this.Exit.TabIndex = 51;
-            this.Exit.Text = "Exit";
-            this.Exit.UseVisualStyleBackColor = true;
-            this.Exit.Visible = false;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(891, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 23);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Creatfile";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(892, 99);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 23);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "add data";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(892, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(65, 20);
-            this.textBox1.TabIndex = 54;
-            this.textBox1.Visible = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::PG_FP6_UI.Properties.Resources.model;
-            this.pictureBox3.Location = new System.Drawing.Point(33, 261);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 49;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(1064, 38);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(236, 52);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 43;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(33, 198);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ClearQR
-            // 
-            this.ClearQR.Image = global::PG_FP6_UI.Properties.Resources.rs;
-            this.ClearQR.Location = new System.Drawing.Point(829, 199);
-            this.ClearQR.Name = "ClearQR";
-            this.ClearQR.Size = new System.Drawing.Size(56, 49);
-            this.ClearQR.TabIndex = 56;
-            this.ClearQR.UseVisualStyleBackColor = true;
-            this.ClearQR.Click += new System.EventHandler(this.ClearQR_Click);
             // 
             // CodeModel_setup
             // 
@@ -707,6 +575,55 @@
             this.Logout.VisibleChanged += new System.EventHandler(this.Logout_VisibleChanged);
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // ClearQR
+            // 
+            this.ClearQR.Image = global::PG_FP6_UI.Properties.Resources.rs;
+            this.ClearQR.Location = new System.Drawing.Point(829, 199);
+            this.ClearQR.Name = "ClearQR";
+            this.ClearQR.Size = new System.Drawing.Size(56, 49);
+            this.ClearQR.TabIndex = 56;
+            this.ClearQR.UseVisualStyleBackColor = true;
+            this.ClearQR.Click += new System.EventHandler(this.ClearQR_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PG_FP6_UI.Properties.Resources.model;
+            this.pictureBox3.Location = new System.Drawing.Point(33, 261);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 49;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(1064, 38);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(236, 52);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 43;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(33, 198);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,14 +636,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.CodeModel_setup);
             this.Controls.Add(this.ClearQR);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Exit);
-            this.Controls.Add(this.CodeModel);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.Pbus);
-            this.Controls.Add(this.Mbus);
             this.Controls.Add(this.S_system);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -755,7 +665,7 @@
             this.Name = "Main";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TULA-PG-FP6-v2.04.02012020";
+            this.Text = "TULA-PGFP6-v2.05.16012020";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Main_KeyUp);
@@ -765,10 +675,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -813,16 +723,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button S_system;
-        private System.Windows.Forms.Label Mbus;
-        private System.Windows.Forms.Label Pbus;
         public System.Windows.Forms.Button LED_MCU;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox CodeModel;
-        private System.Windows.Forms.ToolStripMenuItem autoRunToolStripMenuItem;
-        private System.Windows.Forms.Button Exit;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button ClearQR;
         public System.Windows.Forms.Label CodeModel_setup;
         private System.Windows.Forms.ToolStripMenuItem t1ToolStripMenuItem;
@@ -831,6 +733,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.RichTextBox Command;
         public System.Windows.Forms.Button Logout;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

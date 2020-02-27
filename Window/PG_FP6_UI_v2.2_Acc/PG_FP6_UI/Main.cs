@@ -31,7 +31,7 @@ namespace PG_FP6_UI
         Logfile Logfile = new Logfile();
 
         ModbusRTU MB;
-  
+        MeikoSW MK;
         PG_FP6_RS232 PG_FP6_command;
         WindowsMediaPlayer sound = new WindowsMediaPlayer();
 
@@ -44,6 +44,7 @@ namespace PG_FP6_UI
 
         string sound_Pass = @"PASS.mp3";
         string sound_NG = @"NG.mp3";
+        string tencongdoan = "Nap_Fw";
         //string file_path = @"F:\Project\Tula\Meiko\PG_FP6\Code\Window\Datalog";//+ dtn + ".xls");
         //------------------------------ truyen giua cac form ---------------------------------------
         public string strRx;
@@ -58,7 +59,7 @@ namespace PG_FP6_UI
         public Main(string giatrinhan):this()
         {
             strRx = giatrinhan;
-            CodeModel.Text = strRx;
+       
         }
         internal void capnhat_codesetup()
         {
@@ -74,23 +75,24 @@ namespace PG_FP6_UI
             Data.table.Columns.Add("T1", typeof(string));// datatype string
             Data.table.Columns.Add("T2", typeof(string));// data type int
             Data.table.Columns.Add("T3", typeof(string));// data type int
-
+            Data.table.Columns.Add("FW", typeof(string));// data type int
 
             Data.dataFilemodel.DataSource = Data.table;
             Data.dataFilemodel.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
-            string line = "";
-            using (StreamReader SR = new StreamReader("FileModel.txt"))
-            {
-                while ((line = SR.ReadLine()) != null)
-                {
-                    string kihieu, macode;
-                    macode = line.Substring(0, line.IndexOf(" "));
-                    kihieu = line.Substring(line.IndexOf(" ") + 1, line.Length - line.IndexOf(" ") - 1);
-                    Data.table.Rows.Add(macode, kihieu);
-                }
-                Data.dataFilemodel.DataSource = Data.table;
-            }
+            //string line = "";
+            //using (StreamReader SR = new StreamReader("FileModel.txt"))
+            //{
+            //    while ((line = SR.ReadLine()) != null)
+            //    {
+            //        string kihieu, macode;
+            //        macode = line.Substring(0, line.IndexOf(' '));
+            //        kihieu = line.Substring(line.IndexOf(' ') + 1,line.IndexOf('@') - 1);
+
+            //        Data.table.Rows.Add(macode, kihieu);
+            //    }
+            //    Data.dataFilemodel.DataSource = Data.table;
+            //}
             #endregion
 
             #region Creat Excel File
@@ -102,7 +104,7 @@ namespace PG_FP6_UI
                 //MessageBox.Show(filepath.ToString());
                 if (System.IO.File.Exists(filepath))
                 {
-                        MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls" +": Da ton tai");
+                      //  MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls" +": Da ton tai");
                 }
                 else
                 {                   
@@ -141,14 +143,10 @@ namespace PG_FP6_UI
 
                 PG_FP6_command.DataReceived += new SerialDataReceivedEventHandler(RS232_REV);
 
-
-                //
-                //Tula_Worksheet.Name = "Data1";
-
-                //Tula_Worksheet.Cells[1, 1] = "Time";
-                //Tula_Worksheet.Cells[1, 2] = "QR Code";
-                //Tula_Worksheet.Cells[1, 2] = "Status";
-
+                //----------- MEIKO COMPORT --------------//
+                MK = new MeikoSW(Setup.MKCom.SelectedItem.ToString(), int.Parse(Setup.MKBaud.SelectedItem.ToString()), Parity.None, StopBits.One);
+                MK.DataReceived += new SerialDataReceivedEventHandler(MK_rev);
+                MK.MeikoSW_Connect();
                 //--------------- check file name  and checksum file------------------------
                 req_checkfilename();
                 timer1.Enabled = true;
@@ -157,6 +155,14 @@ namespace PG_FP6_UI
             {
                 MessageBox.Show("Pleasa check setup port!");
             }
+        }
+
+        private void MK_rev(object sender, SerialDataReceivedEventArgs e)
+        {
+            //throw new NotImplementedException();
+            string line = MK.ReadExisting();
+            QR_code.Text = line;
+            AppendText_T(Command, Color.Red, "QR: " + line);
         }
         private void Stop_System()
         {
@@ -169,21 +175,20 @@ namespace PG_FP6_UI
         {
             if (S_system.ForeColor == Color.Red)
             {
-                
-                Init();
+                S_system.Text = "Connected"; 
+               Init();
                if(timer1.Enabled)
                 {
                     S_system.ForeColor = Color.Lime;
-                    Mbus.Text = "Tula-MCU: " + MB.SerialPort + "-" + MB.Baudrate.ToString();
-                    Pbus.Text = "PGFP6     : " + PG_FP6_command.PortName + "-" + PG_FP6_command.BaudRate.ToString();
+
                 }
             }
             else
             {
                 S_system.ForeColor = Color.Red;
+                S_system.Text = "Disconnect";
                 Stop_System();
-                Mbus.Text = "";
-                Pbus.Text = "";
+  
             }
 
 
@@ -292,18 +297,19 @@ namespace PG_FP6_UI
                     {
                         check_sum_file();
                         QR_code.Focus();
+                        try
+                        {
+                            MB.WriteSingleRegister(ModbusRTU.ADD_CLR, 1);
+                        }
+                        catch
+                        { }
                     }
                     catch
                     {
                         MessageBox.Show("Checksum file error!!");
                     }
 
-                    try
-                    {
-                        MB.WriteSingleRegister(ModbusRTU.ADD_CLR, 1);
-                    }
-                    catch
-                    { }
+
                     Start.Enabled = true;
                     CLR.Enabled = true;
                 }
@@ -345,8 +351,8 @@ namespace PG_FP6_UI
 
         void Send_Command()
         {
-            String data = Command_send.Text + "\r\n";
-            PG_FP6_command.Write(data);
+            String data = "PASS\r\n";// Status_PGFP6.Text + "\r\n";
+            MK.Write(data);
             AppendText_T(Command, Color.Red, "[" + dtn + "] " + "Sent: " + data);
         }
         void CheckFile_Exist()
@@ -492,6 +498,28 @@ namespace PG_FP6_UI
             }
 
             #endregion 
+
+            #region PUT TO MEIKO_SW    
+            /*
+                Định dạng khung truyền : serial_number|ten_cong_doan|OK/NG|extra_data
+
+                VD
+                Mình gửi xuống : DCC-MKO-V0501-00000577 . bạn gửi lại mình
+                DCC-MKO-V0501-00000577|DCDC_DoNongNguoi|OK| 12V_ BUCK:6.596;BAT+:12.62;12V 2A:14.61;12V 10A:14.54;+9V1_VDR:360.7;EN_12V_10A:199.9;+5V MEA :4.855;TEMP_12V_10A:6.140;TEMP CASE:6.140;12V_ BUCK_V:12.10;+9V1_VDR:8.906;+5V MEA:5.006;TEMP_12V_10A:2.583;TEMP CASE VOLTAGE:2.578;NAP:OK;
+                Extradata thì định dạng là : Tên:giá trị đo;  giá trị đo thì có thể là số hoặc kết quả OK,NG
+                Cái extra data không không thì để trống nhé. ak. kết thúc là trả lên là \r\n hay CRLF (make new line windown) 0a0d gì đó  
+             */
+            if (Status_PGFP6.Text == "PASS" || Status_PGFP6.Text == "ERROR")
+            {
+                string conv = "";// = Status_PGFP6.Text;
+                if (Status_PGFP6.Text == "PASS") conv = "OK";
+                else conv = "NG";
+
+                string Frame = QR_code.Text + "|" + tencongdoan + "|" + conv + "|" + "\r\n";
+                MK.Write(Frame);
+               // AppendText_T(Command, Color.Red, "Sent: " + Frame);
+            }
+            #endregion
         }
 
         private void Clear_command_Click(object sender, EventArgs e)
@@ -649,7 +677,7 @@ namespace PG_FP6_UI
                 {
                     QR_code.BackColor = Color.Red;
                     Start.Enabled = false;
-                    CodeModel.Text = "";
+               
                     //QR_code.Text = "";
                     MessageBox.Show("Error QR code! \nPlease check QR Code and try again!");
                 }
@@ -670,12 +698,6 @@ namespace PG_FP6_UI
             autorun.ShowDialog();
         }
 
-        private void Exit_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = Logfile.Rn().ToString();
-           
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string filepath = System.IO.Path.Combine(@"C:\Users\HP\Desktop\Temp", "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
@@ -683,10 +705,7 @@ namespace PG_FP6_UI
             Logfile.createExcelfile(filepath);
             Logfile.openExcel(filepath);
 
-        }
-
-  
-   
+        } 
         private void QR_code_KeyUp(object sender, KeyEventArgs e)
         {
 
@@ -740,7 +759,7 @@ namespace PG_FP6_UI
         {
             QR_code.BackColor = Color.Black;
             QR_code.Clear();
-            CodeModel.Clear();
+         
             QR_code.Focus();
         }
 
@@ -781,7 +800,7 @@ namespace PG_FP6_UI
                 {
                     jig_open.Visible = true;
                     QR_code.Clear();
-                    CodeModel.Clear();
+                 
                     MB.WriteSingleRegister(ModbusRTU.ADD_CLR, 1);
 
                 }
@@ -815,6 +834,14 @@ namespace PG_FP6_UI
         {
 
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About ABOUT = new About(this);
+            ABOUT.Show();
+        }
+
+
              
     }
     //class WriteLogFile

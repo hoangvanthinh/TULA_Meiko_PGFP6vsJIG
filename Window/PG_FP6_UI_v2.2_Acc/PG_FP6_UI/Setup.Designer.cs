@@ -52,8 +52,21 @@
             this.P_com = new System.Windows.Forms.ComboBox();
             this.OK = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.MKStopbit = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.MKParity = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.MKData = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.LABM = new System.Windows.Forms.Label();
+            this.MKBaud = new System.Windows.Forms.ComboBox();
+            this.MKCom = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -70,7 +83,7 @@
             this.groupBox1.Controls.Add(this.M_com);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(341, 276);
+            this.groupBox1.Size = new System.Drawing.Size(281, 276);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TULA-MCU";
@@ -131,7 +144,7 @@
             this.M_Stopbit.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.M_Stopbit.Location = new System.Drawing.Point(163, 219);
+            this.M_Stopbit.Location = new System.Drawing.Point(144, 219);
             this.M_Stopbit.Name = "M_Stopbit";
             this.M_Stopbit.Size = new System.Drawing.Size(121, 21);
             this.M_Stopbit.TabIndex = 4;
@@ -143,7 +156,7 @@
             "None",
             "Even",
             "Odd"});
-            this.M_Parity.Location = new System.Drawing.Point(163, 169);
+            this.M_Parity.Location = new System.Drawing.Point(144, 169);
             this.M_Parity.Name = "M_Parity";
             this.M_Parity.Size = new System.Drawing.Size(121, 21);
             this.M_Parity.TabIndex = 3;
@@ -153,7 +166,7 @@
             this.M_Databit.FormattingEnabled = true;
             this.M_Databit.Items.AddRange(new object[] {
             "8"});
-            this.M_Databit.Location = new System.Drawing.Point(163, 119);
+            this.M_Databit.Location = new System.Drawing.Point(144, 119);
             this.M_Databit.Name = "M_Databit";
             this.M_Databit.Size = new System.Drawing.Size(121, 21);
             this.M_Databit.TabIndex = 2;
@@ -164,7 +177,7 @@
             this.M_Baud.Items.AddRange(new object[] {
             "19200",
             "9600"});
-            this.M_Baud.Location = new System.Drawing.Point(163, 69);
+            this.M_Baud.Location = new System.Drawing.Point(144, 69);
             this.M_Baud.Name = "M_Baud";
             this.M_Baud.Size = new System.Drawing.Size(121, 21);
             this.M_Baud.TabIndex = 1;
@@ -172,7 +185,7 @@
             // M_com
             // 
             this.M_com.FormattingEnabled = true;
-            this.M_com.Location = new System.Drawing.Point(163, 19);
+            this.M_com.Location = new System.Drawing.Point(144, 19);
             this.M_com.Name = "M_com";
             this.M_com.Size = new System.Drawing.Size(121, 21);
             this.M_com.TabIndex = 0;
@@ -189,9 +202,9 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.P_Baud);
             this.groupBox2.Controls.Add(this.P_com);
-            this.groupBox2.Location = new System.Drawing.Point(394, 12);
+            this.groupBox2.Location = new System.Drawing.Point(299, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(341, 276);
+            this.groupBox2.Size = new System.Drawing.Size(259, 276);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PGFP6-RENESAS";
@@ -212,7 +225,7 @@
             this.P_Stopbit.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.P_Stopbit.Location = new System.Drawing.Point(189, 219);
+            this.P_Stopbit.Location = new System.Drawing.Point(127, 219);
             this.P_Stopbit.Name = "P_Stopbit";
             this.P_Stopbit.Size = new System.Drawing.Size(121, 21);
             this.P_Stopbit.TabIndex = 9;
@@ -234,7 +247,7 @@
             "None",
             "Even",
             "Odd"});
-            this.P_Parity.Location = new System.Drawing.Point(189, 169);
+            this.P_Parity.Location = new System.Drawing.Point(127, 169);
             this.P_Parity.Name = "P_Parity";
             this.P_Parity.Size = new System.Drawing.Size(121, 21);
             this.P_Parity.TabIndex = 8;
@@ -254,7 +267,7 @@
             this.P_Databit.FormattingEnabled = true;
             this.P_Databit.Items.AddRange(new object[] {
             "8"});
-            this.P_Databit.Location = new System.Drawing.Point(189, 119);
+            this.P_Databit.Location = new System.Drawing.Point(127, 119);
             this.P_Databit.Name = "P_Databit";
             this.P_Databit.Size = new System.Drawing.Size(121, 21);
             this.P_Databit.TabIndex = 7;
@@ -285,7 +298,7 @@
             this.P_Baud.Items.AddRange(new object[] {
             "19200",
             "9600"});
-            this.P_Baud.Location = new System.Drawing.Point(189, 69);
+            this.P_Baud.Location = new System.Drawing.Point(127, 69);
             this.P_Baud.Name = "P_Baud";
             this.P_Baud.Size = new System.Drawing.Size(121, 21);
             this.P_Baud.TabIndex = 6;
@@ -293,7 +306,7 @@
             // P_com
             // 
             this.P_com.FormattingEnabled = true;
-            this.P_com.Location = new System.Drawing.Point(189, 19);
+            this.P_com.Location = new System.Drawing.Point(127, 19);
             this.P_com.Name = "P_com";
             this.P_com.Size = new System.Drawing.Size(121, 21);
             this.P_com.TabIndex = 5;
@@ -319,11 +332,144 @@
             this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.MKStopbit);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.MKParity);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.MKData);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.LABM);
+            this.groupBox3.Controls.Add(this.MKBaud);
+            this.groupBox3.Controls.Add(this.MKCom);
+            this.groupBox3.Location = new System.Drawing.Point(564, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(259, 276);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Meiko";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(34, 222);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 20);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Stopbit";
+            // 
+            // MKStopbit
+            // 
+            this.MKStopbit.FormattingEnabled = true;
+            this.MKStopbit.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.MKStopbit.Location = new System.Drawing.Point(127, 219);
+            this.MKStopbit.Name = "MKStopbit";
+            this.MKStopbit.Size = new System.Drawing.Size(121, 21);
+            this.MKStopbit.TabIndex = 9;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(34, 172);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 20);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Parity";
+            // 
+            // MKParity
+            // 
+            this.MKParity.FormattingEnabled = true;
+            this.MKParity.Items.AddRange(new object[] {
+            "None",
+            "Even",
+            "Odd"});
+            this.MKParity.Location = new System.Drawing.Point(127, 169);
+            this.MKParity.Name = "MKParity";
+            this.MKParity.Size = new System.Drawing.Size(121, 21);
+            this.MKParity.TabIndex = 8;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(34, 122);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 20);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Databit";
+            // 
+            // MKData
+            // 
+            this.MKData.FormattingEnabled = true;
+            this.MKData.Items.AddRange(new object[] {
+            "8"});
+            this.MKData.Location = new System.Drawing.Point(127, 119);
+            this.MKData.Name = "MKData";
+            this.MKData.Size = new System.Drawing.Size(121, 21);
+            this.MKData.TabIndex = 7;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(34, 72);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(75, 20);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Baudrate";
+            // 
+            // LABM
+            // 
+            this.LABM.AutoSize = true;
+            this.LABM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LABM.Location = new System.Drawing.Point(34, 22);
+            this.LABM.Name = "LABM";
+            this.LABM.Size = new System.Drawing.Size(45, 20);
+            this.LABM.TabIndex = 10;
+            this.LABM.Text = "COM";
+            // 
+            // MKBaud
+            // 
+            this.MKBaud.FormattingEnabled = true;
+            this.MKBaud.Items.AddRange(new object[] {
+            "19200",
+            "9600"});
+            this.MKBaud.Location = new System.Drawing.Point(127, 69);
+            this.MKBaud.Name = "MKBaud";
+            this.MKBaud.Size = new System.Drawing.Size(121, 21);
+            this.MKBaud.TabIndex = 6;
+            // 
+            // MKCom
+            // 
+            this.MKCom.FormattingEnabled = true;
+            this.MKCom.Location = new System.Drawing.Point(127, 19);
+            this.MKCom.Name = "MKCom";
+            this.MKCom.Size = new System.Drawing.Size(121, 21);
+            this.MKCom.TabIndex = 5;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(23, 310);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(162, 18);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Note: COM 44 - 43 - 42";
+            // 
             // Setup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 350);
+            this.ClientSize = new System.Drawing.Size(841, 350);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.OK);
             this.Controls.Add(this.groupBox2);
@@ -335,7 +481,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -365,5 +514,17 @@
         public System.Windows.Forms.ComboBox P_Parity;
         public System.Windows.Forms.ComboBox P_Databit;
         public System.Windows.Forms.ComboBox P_Baud;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.ComboBox MKStopbit;
+        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.ComboBox MKParity;
+        private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.ComboBox MKData;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label LABM;
+        public System.Windows.Forms.ComboBox MKBaud;
+        public System.Windows.Forms.ComboBox MKCom;
+        private System.Windows.Forms.Label label15;
     }
 }

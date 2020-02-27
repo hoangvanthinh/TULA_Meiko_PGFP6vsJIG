@@ -16,7 +16,7 @@ namespace PG_FP6_UI
         public DataTable table = new DataTable();
         Main main;// = new Main();
 
-        public string KiHieu, macode;
+        public string KiHieu, macode, Fw;
         public Data(Main Inmain)
         {
 
@@ -38,7 +38,7 @@ namespace PG_FP6_UI
         internal void Capnhatcaidat()
         {
 
-            table.Rows.Add(macode, KiHieu);
+            table.Rows.Add(macode, KiHieu,"-","-", Fw);
             dataFilemodel.DataSource = table;
         }
         //File.AppendAllText("FileModel.txt", Data.KiHieu + "  " + Data.macode + Environment.NewLine);
@@ -48,7 +48,7 @@ namespace PG_FP6_UI
             File.WriteAllText("FileModel.txt", string.Empty);
             for (int i = 0; i < dataFilemodel.RowCount - 1;i++)
             {
-                File.AppendAllText("FileModel.txt", dataFilemodel.Rows[i].Cells[0].Value.ToString() + " " + dataFilemodel.Rows[i].Cells[1].Value.ToString() + Environment.NewLine);
+                File.AppendAllText("FileModel.txt", dataFilemodel.Rows[i].Cells[0].Value.ToString() + " " + dataFilemodel.Rows[i].Cells[1].Value.ToString() + "@" + dataFilemodel.Rows[i].Cells[4].Value.ToString() + Environment.NewLine);
             }
         
                 this.Close();
@@ -76,8 +76,9 @@ namespace PG_FP6_UI
                 {
                     string kihieu, macode;
                     macode = line.Substring(0, line.IndexOf(" "));
-                    kihieu  = line.Substring(line.IndexOf(" ") + 1, line.Length - line.IndexOf(" ") - 1);
-                    table.Rows.Add(macode, kihieu);
+                    kihieu = line.Substring(line.IndexOf(" ") + 1, line.IndexOf('@') - line.IndexOf(" ") - 1);
+                    Fw = line.Substring(line.IndexOf('@') + 1, line.Length - line.IndexOf('@') - 1);
+                    table.Rows.Add(macode, kihieu, "", "", Fw);
                 }
                 dataFilemodel.DataSource = table;
             }
@@ -85,7 +86,7 @@ namespace PG_FP6_UI
             Model_list.Items.Clear();
             for (int i = 0; i < dataFilemodel.RowCount - 1; i++)
             {
-                Model_list.Items.Add(dataFilemodel.Rows[i].Cells[0].Value.ToString());// + ":" + dataFilemodel.Rows[i].Cells[0].Value.ToString());
+                Model_list.Items.Add(dataFilemodel.Rows[i].Cells[0].Value.ToString() + "--" + dataFilemodel.Rows[i].Cells[4].Value.ToString());// + ":" + dataFilemodel.Rows[i].Cells[0].Value.ToString());
             }
             Folder.Text = PG_FP6_UI.Properties.Settings.Default.pathLogfile;
         }

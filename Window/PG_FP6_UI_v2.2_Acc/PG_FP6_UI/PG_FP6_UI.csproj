@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Autorun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeikoSW.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ModbusRTU.cs" />
     <Compile Include="password.cs">
@@ -104,6 +113,9 @@
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
     <Compile Include="Variable.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Autorun.resx">
       <DependentUpon>Autorun.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +213,7 @@
   <ItemGroup>
     <Content Include="favicon %281%29.ico" />
     <Content Include="logo.ico" />
+    <None Include="Resources\Capture.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

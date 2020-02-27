@@ -43,6 +43,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.fwname = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Khieu
@@ -81,9 +83,9 @@
             // 
             // Save_Code
             // 
-            this.Save_Code.Location = new System.Drawing.Point(310, 202);
+            this.Save_Code.Location = new System.Drawing.Point(254, 205);
             this.Save_Code.Name = "Save_Code";
-            this.Save_Code.Size = new System.Drawing.Size(108, 44);
+            this.Save_Code.Size = new System.Drawing.Size(100, 34);
             this.Save_Code.TabIndex = 4;
             this.Save_Code.Text = "Add";
             this.Save_Code.UseVisualStyleBackColor = true;
@@ -191,11 +193,30 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 32);
             this.comboBox1.TabIndex = 14;
             // 
+            // fwname
+            // 
+            this.fwname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fwname.Location = new System.Drawing.Point(12, 155);
+            this.fwname.Name = "fwname";
+            this.fwname.Size = new System.Drawing.Size(614, 29);
+            this.fwname.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(43, 139);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "FirmWare";
+            // 
             // Data_Addcode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 254);
+            this.ClientSize = new System.Drawing.Size(638, 251);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.fwname);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -236,5 +257,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.TextBox fwname;
+        private System.Windows.Forms.Label label10;
     }
 }

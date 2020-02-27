@@ -103,7 +103,7 @@
             // 
             // Add_model
             // 
-            this.Add_model.Location = new System.Drawing.Point(485, 88);
+            this.Add_model.Location = new System.Drawing.Point(417, 88);
             this.Add_model.Name = "Add_model";
             this.Add_model.Size = new System.Drawing.Size(105, 35);
             this.Add_model.TabIndex = 14;
@@ -114,7 +114,7 @@
             // Save_model
             // 
             this.Save_model.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.Save_model.Location = new System.Drawing.Point(485, 242);
+            this.Save_model.Location = new System.Drawing.Point(417, 242);
             this.Save_model.Name = "Save_model";
             this.Save_model.Size = new System.Drawing.Size(105, 35);
             this.Save_model.TabIndex = 17;
@@ -127,13 +127,13 @@
             this.dataFilemodel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataFilemodel.Location = new System.Drawing.Point(18, 88);
             this.dataFilemodel.Name = "dataFilemodel";
-            this.dataFilemodel.Size = new System.Drawing.Size(416, 131);
+            this.dataFilemodel.Size = new System.Drawing.Size(360, 131);
             this.dataFilemodel.TabIndex = 18;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(485, 292);
+            this.button1.Location = new System.Drawing.Point(417, 292);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 35);
             this.button1.TabIndex = 19;
@@ -162,9 +162,9 @@
             // Browsefile
             // 
             this.Browsefile.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.Browsefile.Location = new System.Drawing.Point(345, 305);
+            this.Browsefile.Location = new System.Drawing.Point(315, 305);
             this.Browsefile.Name = "Browsefile";
-            this.Browsefile.Size = new System.Drawing.Size(89, 22);
+            this.Browsefile.Size = new System.Drawing.Size(63, 22);
             this.Browsefile.TabIndex = 22;
             this.Browsefile.Text = "Browse";
             this.Browsefile.UseVisualStyleBackColor = true;
@@ -173,9 +173,9 @@
             // Model_list
             // 
             this.Model_list.FormattingEnabled = true;
-            this.Model_list.Location = new System.Drawing.Point(20, 256);
+            this.Model_list.Location = new System.Drawing.Point(134, 232);
             this.Model_list.Name = "Model_list";
-            this.Model_list.Size = new System.Drawing.Size(173, 21);
+            this.Model_list.Size = new System.Drawing.Size(244, 21);
             this.Model_list.TabIndex = 23;
             this.Model_list.SelectedIndexChanged += new System.EventHandler(this.Model_list_SelectedIndexChanged);
             // 
@@ -193,18 +193,18 @@
             // 
             this.Code_model.AutoSize = true;
             this.Code_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Code_model.Location = new System.Drawing.Point(210, 257);
+            this.Code_model.Location = new System.Drawing.Point(17, 261);
             this.Code_model.Name = "Code_model";
-            this.Code_model.Size = new System.Drawing.Size(86, 16);
+            this.Code_model.Size = new System.Drawing.Size(81, 16);
             this.Code_model.TabIndex = 25;
-            this.Code_model.Text = "Code_model";
+            this.Code_model.Text = "Firmware ref";
             // 
             // Data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(632, 375);
+            this.ClientSize = new System.Drawing.Size(534, 340);
             this.Controls.Add(this.Code_model);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Model_list);

@@ -26,6 +26,8 @@ namespace PG_FP6_UI
 
             Data.KiHieu = Khieu.Text;
             Data.macode = Code.Text;
+            Data.Fw = fwname.Text;
+
             Data.Capnhatcaidat();
             //File.AppendAllText("FileModel.txt", Data.KiHieu + "  " + Data.macode + Environment.NewLine);
             this.Close();

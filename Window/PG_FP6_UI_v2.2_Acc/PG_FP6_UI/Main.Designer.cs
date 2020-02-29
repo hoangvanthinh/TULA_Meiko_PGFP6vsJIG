@@ -45,6 +45,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.t1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Command_send = new System.Windows.Forms.TextBox();
             this.Clear_command = new System.Windows.Forms.Button();
             this.C_Files = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.jig_close = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Logout = new System.Windows.Forms.Button();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ClearQR = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -94,6 +94,7 @@
             this.QR_code.ForeColor = System.Drawing.Color.Yellow;
             this.QR_code.Location = new System.Drawing.Point(107, 199);
             this.QR_code.Name = "QR_code";
+            this.QR_code.ReadOnly = true;
             this.QR_code.Size = new System.Drawing.Size(705, 49);
             this.QR_code.TabIndex = 0;
             this.QR_code.TextChanged += new System.EventHandler(this.QR_code_TextChanged);
@@ -242,6 +243,13 @@
             this.t1ToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.t1ToolStripMenuItem.Text = "Login";
             this.t1ToolStripMenuItem.Click += new System.EventHandler(this.t1ToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Command_send
             // 
@@ -574,13 +582,6 @@
             this.Logout.Visible = false;
             this.Logout.VisibleChanged += new System.EventHandler(this.Logout_VisibleChanged);
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // ClearQR
             // 

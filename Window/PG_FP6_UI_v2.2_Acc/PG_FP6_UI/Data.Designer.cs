@@ -103,9 +103,9 @@
             // 
             // Add_model
             // 
-            this.Add_model.Location = new System.Drawing.Point(417, 88);
+            this.Add_model.Location = new System.Drawing.Point(417, 172);
             this.Add_model.Name = "Add_model";
-            this.Add_model.Size = new System.Drawing.Size(105, 35);
+            this.Add_model.Size = new System.Drawing.Size(82, 35);
             this.Add_model.TabIndex = 14;
             this.Add_model.Text = "ADD";
             this.Add_model.UseVisualStyleBackColor = true;
@@ -114,9 +114,9 @@
             // Save_model
             // 
             this.Save_model.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.Save_model.Location = new System.Drawing.Point(417, 242);
+            this.Save_model.Location = new System.Drawing.Point(417, 234);
             this.Save_model.Name = "Save_model";
-            this.Save_model.Size = new System.Drawing.Size(105, 35);
+            this.Save_model.Size = new System.Drawing.Size(82, 31);
             this.Save_model.TabIndex = 17;
             this.Save_model.Text = "Save";
             this.Save_model.UseVisualStyleBackColor = true;
@@ -125,7 +125,7 @@
             // dataFilemodel
             // 
             this.dataFilemodel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataFilemodel.Location = new System.Drawing.Point(18, 88);
+            this.dataFilemodel.Location = new System.Drawing.Point(20, 115);
             this.dataFilemodel.Name = "dataFilemodel";
             this.dataFilemodel.Size = new System.Drawing.Size(360, 131);
             this.dataFilemodel.TabIndex = 18;
@@ -133,9 +133,9 @@
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(417, 292);
+            this.button1.Location = new System.Drawing.Point(417, 282);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 35);
+            this.button1.Size = new System.Drawing.Size(82, 29);
             this.button1.TabIndex = 19;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
@@ -145,16 +145,16 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 286);
+            this.label6.Location = new System.Drawing.Point(17, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 16);
+            this.label6.Size = new System.Drawing.Size(58, 16);
             this.label6.TabIndex = 20;
-            this.label6.Text = "Logdata file";
+            this.label6.Text = "Logdata";
             // 
             // Folder
             // 
             this.Folder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Folder.Location = new System.Drawing.Point(17, 305);
+            this.Folder.Location = new System.Drawing.Point(88, 69);
             this.Folder.Name = "Folder";
             this.Folder.Size = new System.Drawing.Size(292, 22);
             this.Folder.TabIndex = 21;
@@ -162,9 +162,9 @@
             // Browsefile
             // 
             this.Browsefile.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.Browsefile.Location = new System.Drawing.Point(315, 305);
+            this.Browsefile.Location = new System.Drawing.Point(417, 60);
             this.Browsefile.Name = "Browsefile";
-            this.Browsefile.Size = new System.Drawing.Size(63, 22);
+            this.Browsefile.Size = new System.Drawing.Size(82, 31);
             this.Browsefile.TabIndex = 22;
             this.Browsefile.Text = "Browse";
             this.Browsefile.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
             // Model_list
             // 
             this.Model_list.FormattingEnabled = true;
-            this.Model_list.Location = new System.Drawing.Point(134, 232);
+            this.Model_list.Location = new System.Drawing.Point(134, 266);
             this.Model_list.Name = "Model_list";
             this.Model_list.Size = new System.Drawing.Size(244, 21);
             this.Model_list.TabIndex = 23;
@@ -183,7 +183,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 233);
+            this.label7.Location = new System.Drawing.Point(17, 267);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 16);
             this.label7.TabIndex = 24;
@@ -193,11 +193,11 @@
             // 
             this.Code_model.AutoSize = true;
             this.Code_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Code_model.Location = new System.Drawing.Point(17, 261);
+            this.Code_model.Location = new System.Drawing.Point(17, 295);
             this.Code_model.Name = "Code_model";
-            this.Code_model.Size = new System.Drawing.Size(81, 16);
+            this.Code_model.Size = new System.Drawing.Size(66, 16);
             this.Code_model.TabIndex = 25;
-            this.Code_model.Text = "Firmware ref";
+            this.Code_model.Text = "Firmware \r\n";
             // 
             // Data
             // 

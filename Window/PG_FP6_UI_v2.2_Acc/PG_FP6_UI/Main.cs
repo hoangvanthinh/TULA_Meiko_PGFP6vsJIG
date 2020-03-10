@@ -50,6 +50,7 @@ namespace PG_FP6_UI
         public string strRx;
         public int Account = 0;
         int status_QRcode = 0;
+        
         public Main()
         {
             InitializeComponent();
@@ -97,28 +98,54 @@ namespace PG_FP6_UI
 
             #region Creat Excel File
 
+            //try
+            //{
+            //    //string filepath =@"C:\Users\HP\Desktop\Logfile\t1.xls";
+            //    string filepath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+            //    //MessageBox.Show(filepath.ToString());
+            //    if (System.IO.File.Exists(filepath))
+            //    {
+            //          //  MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls" +": Da ton tai");
+            //    }
+            //    else
+            //    {                   
+            //        Logfile.createExcelfile(filepath);     
+            //    }
+            //    Logfile.openExcel(filepath);
+               
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Warring: Don't Creat Excel file!!");
+            //}
+            #endregion
+            // MessageBox.Show("Please setup Port!");
+            #region kiem tra va tao folder theo ngay-thang-nam
             try
             {
-                //string filepath =@"C:\Users\HP\Desktop\Logfile\t1.xls";
-                string filepath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
-                //MessageBox.Show(filepath.ToString());
-                if (System.IO.File.Exists(filepath))
+                string pathTotal = PG_FP6_UI.Properties.Settings.Default.pathLogfile;
+                string path_Day = DateTime.Now.ToString("MM-dd-yyyy").ToString();
+
+                string Full_path = Path.Combine(pathTotal, path_Day);
+                string Full_path_OK = Path.Combine(Full_path, "OK");
+                string Full_path_NG = Path.Combine(Full_path, "NG");
+
+                if (!(Directory.Exists(Full_path)))
                 {
-                      //  MessageBox.Show("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls" +": Da ton tai");
+                    Directory.CreateDirectory(Full_path_OK);
+                    Directory.CreateDirectory(Full_path_NG);
                 }
                 else
-                {                   
-                    Logfile.createExcelfile(filepath);     
+                {
+                    if (!Directory.Exists(Full_path_OK)) Directory.CreateDirectory(Full_path_OK);
+                    if (!Directory.Exists(Full_path_NG)) Directory.CreateDirectory(Full_path_NG);
                 }
-                Logfile.openExcel(filepath);
-               
             }
             catch
             {
-                MessageBox.Show("Warring: Don't Creat Excel file!!");
+                MessageBox.Show("Don't Creat logfile");
             }
-            #endregion
-            // MessageBox.Show("Please setup Port!");
+            #endregion 
 
             Setup.ShowDialog();
         }
@@ -325,6 +352,7 @@ namespace PG_FP6_UI
                     PG_FP6_RS232.num_ERROR++;
                     Box_NG.Text = PG_FP6_RS232.num_ERROR.ToString();
                 }
+                //--------------dem so luot NG OK
                 PG_FP6_RS232.num_Sum = PG_FP6_RS232.num_ERROR + PG_FP6_RS232.num_Pass;
                 Box_Sum.Text = PG_FP6_RS232.num_Sum.ToString();
             
@@ -487,15 +515,7 @@ namespace PG_FP6_UI
             }
             #region LOGDATA to Excel File
 
-            if(Status_PGFP6.Text == "PASS" || Status_PGFP6.Text =="ERROR")
-            {
-                Logfile.addDataToExcel(Logfile.Rownumber.ToString(),QR_code.Text, Status_PGFP6.Text, DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss"), " ");
-                //WriteLogFile.WriteLogtxt("PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".txt",
-                //                        String.Format("{0}  {1}  {2}", QR_code.Text, Status_PGFP6.Text, DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss")));
- 
-                this.QR_code.TextChanged += new System.EventHandler(this.QR_code_TextChanged);
-                QR_code.Focus();
-            }
+
 
             #endregion 
 
@@ -521,7 +541,7 @@ namespace PG_FP6_UI
             }
             #endregion
         }
-
+        
         private void Clear_command_Click(object sender, EventArgs e)
         {
             Command.Clear();
@@ -604,7 +624,42 @@ namespace PG_FP6_UI
                 MessageBox.Show("PGFP6_Disconnect");
             }
         }
+        void Logfiletxt()
+        {
+            if ((Status_PGFP6.Text == "PASS" || Status_PGFP6.Text == "ERROR") && QR_code.Text != "")
+            {
+                //Logfile.addDataToExcel(Logfile.Rownumber.ToString(),QR_code.Text, Status_PGFP6.Text, DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss"), " ");
 
+                string pathTotal = PG_FP6_UI.Properties.Settings.Default.pathLogfile;
+                string path_Day = DateTime.Now.ToString("MM-dd-yyyy").ToString();
+
+                string Full_path = Path.Combine(pathTotal, path_Day);
+                string Full_path_OK = Path.Combine(Full_path, "OK");
+                string Full_path_NG = Path.Combine(Full_path, "NG");
+                string Full_path_OK_file = Path.Combine(Full_path_OK, QR_code.Text + ".txt");
+                string Full_path_NG_file = Path.Combine(Full_path_NG, QR_code.Text + ".txt");
+                //=====================================txt========================================================C:\Users\MEIKO\Desktop\PGFP6_DATA
+                // string txtpath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+                //string OK_path = System.IO.Path.Combine(@"C:\Users\MEIKO\Desktop\PGFP6_DATA\OK", QR_code.Text + DateTime.Now.ToString("MM-dd-yyyy") + ".txt");
+                //string NG_path = System.IO.Path.Combine(@"C:\Users\MEIKO\Desktop\PGFP6_DATA\NG", QR_code.Text + DateTime.Now.ToString("MM-dd-yyyy") + ".txt");
+                string T_path;
+                if (Status_PGFP6.Text == "PASS")
+                {
+                    T_path = Full_path_OK_file;
+                }
+                else
+                    T_path = Full_path_NG_file;
+                using (FileStream fileStream = File.Create(T_path))
+                using (StreamWriter writer = new StreamWriter(fileStream))
+                {
+                    writer.WriteLine(QR_code.Text + "___" + checksumMCU.Text + "___" + Filename.Text + "___" + DateTime.Now.ToString("MM-dd-yyyy-HH:mm:ss"));
+                }
+                //================================================================================================
+
+                this.QR_code.TextChanged += new System.EventHandler(this.QR_code_TextChanged);
+                QR_code.Focus();
+            }
+        }
         private void checksum_MCU()
         {
             string temp;
@@ -628,6 +683,7 @@ namespace PG_FP6_UI
                 PG_FP6_RS232.num_Pass++;
                 Box_Pass.Text = PG_FP6_RS232.num_Pass.ToString();
             }
+            Logfiletxt();
 
         }
 
@@ -730,7 +786,7 @@ namespace PG_FP6_UI
                 {
                     try
                     {
-                        Logfile.closeExcel();
+                        //Logfile.closeExcel();
                         Application.Exit();
                     }
                     catch
@@ -839,6 +895,34 @@ namespace PG_FP6_UI
         {
             About ABOUT = new About(this);
             ABOUT.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string pathTotal = PG_FP6_UI.Properties.Settings.Default.pathLogfile;
+            string path_Day = DateTime.Now.ToString("MM-dd-yyyy").ToString();
+
+            string Full_path = Path.Combine(pathTotal, path_Day);
+            string Full_path_OK = Path.Combine(Full_path, "OK");
+            string Full_path_NG = Path.Combine(Full_path, "NG");
+            string Full_path_OK_file = Path.Combine(Full_path_OK, textBox1.Text + ".txt");
+            string Full_path_NG_file = Path.Combine(Full_path_NG, textBox1.Text + ".txt");
+            //=====================================txt========================================================C:\Users\MEIKO\Desktop\PGFP6_DATA
+            // string txtpath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
+            //string OK_path = System.IO.Path.Combine(@"C:\Users\MEIKO\Desktop\PGFP6_DATA\OK", QR_code.Text + DateTime.Now.ToString("MM-dd-yyyy") + ".txt");
+            //string NG_path = System.IO.Path.Combine(@"C:\Users\MEIKO\Desktop\PGFP6_DATA\NG", QR_code.Text + DateTime.Now.ToString("MM-dd-yyyy") + ".txt");
+            string T_path;
+            //if (Status_PGFP6.Text == "PASS")
+            //{
+            //    T_path = Full_path_OK_file;
+            //}
+            //else
+                T_path = Full_path_NG_file;
+            using (FileStream fileStream = File.Create(T_path))
+            using (StreamWriter writer = new StreamWriter(fileStream))
+            {
+                writer.WriteLine(textBox1.Text + textBox2.Text);
+            }
         }
 
 

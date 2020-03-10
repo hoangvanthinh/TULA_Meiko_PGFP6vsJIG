@@ -65,7 +65,7 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(120, 65);
             this.label20.TabIndex = 126;
-            this.label20.Text = "TULA-PGFP6\r\nVersion: 2.05.16012020\r\nTULA Solution Co.,Ltd\r\nCopyright © 2005-2019\r" +
+            this.label20.Text = "TULA-PGFP6\r\nVersion: 2.08.10032020\r\nTULA Solution Co.,Ltd\r\nCopyright © 2005-2019\r" +
     "\nAll right reserved";
             // 
             // label21

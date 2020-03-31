@@ -905,8 +905,8 @@ namespace PG_FP6_UI
             string Full_path = Path.Combine(pathTotal, path_Day);
             string Full_path_OK = Path.Combine(Full_path, "OK");
             string Full_path_NG = Path.Combine(Full_path, "NG");
-            string Full_path_OK_file = Path.Combine(Full_path_OK, textBox1.Text + ".txt");
-            string Full_path_NG_file = Path.Combine(Full_path_NG, textBox1.Text + ".txt");
+            //string Full_path_OK_file = Path.Combine(Full_path_OK, textBox1.Text + ".txt");
+            //string Full_path_NG_file = Path.Combine(Full_path_NG, textBox1.Text + ".txt");
             //=====================================txt========================================================C:\Users\MEIKO\Desktop\PGFP6_DATA
             // string txtpath = System.IO.Path.Combine(@"" + PG_FP6_UI.Properties.Settings.Default.pathLogfile, "PGFP6-" + DateTime.Now.ToString("MM-dd-yyyy") + ".xls");
             //string OK_path = System.IO.Path.Combine(@"C:\Users\MEIKO\Desktop\PGFP6_DATA\OK", QR_code.Text + DateTime.Now.ToString("MM-dd-yyyy") + ".txt");
@@ -917,13 +917,22 @@ namespace PG_FP6_UI
             //    T_path = Full_path_OK_file;
             //}
             //else
-                T_path = Full_path_NG_file;
-            using (FileStream fileStream = File.Create(T_path))
-            using (StreamWriter writer = new StreamWriter(fileStream))
-            {
-                writer.WriteLine(textBox1.Text + textBox2.Text);
-            }
+            //    T_path = Full_path_NG_file;
+            //using (FileStream fileStream = File.Create(T_path))
+            //using (StreamWriter writer = new StreamWriter(fileStream))
+            //{
+            //    writer.WriteLine(textBox1.Text + textBox2.Text);
+            //}
         }
+
+        private void reset_count_Click(object sender, EventArgs e)
+        {
+            PG_FP6_RS232.num_Pass = 0;
+            PG_FP6_RS232.num_ERROR = 0;
+            PG_FP6_RS232.num_Sum = 0;
+        }
+
+
 
 
              

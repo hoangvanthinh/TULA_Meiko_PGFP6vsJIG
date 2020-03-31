@@ -67,6 +67,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.fcks = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.reset_count = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.S_system = new System.Windows.Forms.Button();
             this.CodeModel_setup = new System.Windows.Forms.Label();
@@ -78,9 +79,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -332,7 +330,7 @@
             this.Box_Pass.BackColor = System.Drawing.Color.Black;
             this.Box_Pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Pass.ForeColor = System.Drawing.Color.Lime;
-            this.Box_Pass.Location = new System.Drawing.Point(240, 75);
+            this.Box_Pass.Location = new System.Drawing.Point(160, 74);
             this.Box_Pass.Name = "Box_Pass";
             this.Box_Pass.Size = new System.Drawing.Size(70, 38);
             this.Box_Pass.TabIndex = 29;
@@ -343,7 +341,7 @@
             this.Box_NG.BackColor = System.Drawing.Color.Black;
             this.Box_NG.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_NG.ForeColor = System.Drawing.Color.Red;
-            this.Box_NG.Location = new System.Drawing.Point(357, 73);
+            this.Box_NG.Location = new System.Drawing.Point(261, 72);
             this.Box_NG.Name = "Box_NG";
             this.Box_NG.Size = new System.Drawing.Size(70, 38);
             this.Box_NG.TabIndex = 30;
@@ -354,7 +352,7 @@
             this.Box_Sum.BackColor = System.Drawing.Color.Black;
             this.Box_Sum.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Box_Sum.ForeColor = System.Drawing.Color.Yellow;
-            this.Box_Sum.Location = new System.Drawing.Point(475, 73);
+            this.Box_Sum.Location = new System.Drawing.Point(364, 72);
             this.Box_Sum.Name = "Box_Sum";
             this.Box_Sum.Size = new System.Drawing.Size(70, 38);
             this.Box_Sum.TabIndex = 31;
@@ -366,7 +364,7 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(492, 31);
+            this.label2.Location = new System.Drawing.Point(381, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 33);
             this.label2.TabIndex = 32;
@@ -378,7 +376,7 @@
             this.label8.BackColor = System.Drawing.Color.Black;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(351, 31);
+            this.label8.Location = new System.Drawing.Point(255, 30);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 33);
             this.label8.TabIndex = 33;
@@ -390,7 +388,7 @@
             this.label9.BackColor = System.Drawing.Color.Black;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Lime;
-            this.label9.Location = new System.Drawing.Point(234, 31);
+            this.label9.Location = new System.Drawing.Point(154, 30);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 33);
             this.label9.TabIndex = 34;
@@ -414,7 +412,7 @@
             this.checksumMCU.ForeColor = System.Drawing.Color.White;
             this.checksumMCU.Location = new System.Drawing.Point(15, 73);
             this.checksumMCU.Name = "checksumMCU";
-            this.checksumMCU.Size = new System.Drawing.Size(142, 38);
+            this.checksumMCU.Size = new System.Drawing.Size(120, 38);
             this.checksumMCU.TabIndex = 36;
             this.checksumMCU.Text = "0";
             // 
@@ -422,11 +420,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.Desktop;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(8, 26);
+            this.label4.Location = new System.Drawing.Point(5, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 39);
+            this.label4.Size = new System.Drawing.Size(144, 33);
             this.label4.TabIndex = 37;
             this.label4.Text = "Total sum";
             // 
@@ -476,6 +474,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.reset_count);
             this.groupBox1.Controls.Add(this.checksumMCU);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label9);
@@ -492,6 +491,16 @@
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PG-FP6-Report";
+            // 
+            // reset_count
+            // 
+            this.reset_count.Image = global::PG_FP6_UI.Properties.Resources.rs;
+            this.reset_count.Location = new System.Drawing.Point(459, 35);
+            this.reset_count.Name = "reset_count";
+            this.reset_count.Size = new System.Drawing.Size(84, 78);
+            this.reset_count.TabIndex = 63;
+            this.reset_count.UseVisualStyleBackColor = true;
+            this.reset_count.Click += new System.EventHandler(this.reset_count_Click);
             // 
             // groupBox2
             // 
@@ -628,30 +637,6 @@
             this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(891, 96);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 23);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(672, 261);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 61;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(672, 290);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 62;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,9 +645,6 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1350, 730);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Logout);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.CodeModel_setup);
@@ -696,7 +678,7 @@
             this.Name = "Main";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TULA-PGFP6-v2.08.1003020";
+            this.Text = "TULA-PGFP6-v2.09.3103.20";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Main_KeyUp);
@@ -765,9 +747,7 @@
         public System.Windows.Forms.RichTextBox Command;
         public System.Windows.Forms.Button Logout;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button reset_count;
     }
 }
 

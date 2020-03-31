@@ -63,10 +63,10 @@
             this.label20.ForeColor = System.Drawing.Color.Black;
             this.label20.Location = new System.Drawing.Point(9, 144);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(120, 65);
+            this.label20.Size = new System.Drawing.Size(117, 65);
             this.label20.TabIndex = 126;
-            this.label20.Text = "TULA-PGFP6\r\nVersion: 2.08.10032020\r\nTULA Solution Co.,Ltd\r\nCopyright © 2005-2019\r" +
-    "\nAll right reserved";
+            this.label20.Text = "TULA-PGFP6\r\nVersion: 2.09.3103.20\r\nTULA Solution Co.,Ltd\r\nCopyright © 2005-2019\r\n" +
+    "All right reserved";
             // 
             // label21
             // 
